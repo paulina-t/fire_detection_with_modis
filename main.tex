@@ -192,7 +192,7 @@ The method used to detect fires using MODIS data is described in \citeauthor{gig
 \subsection{Data}
 The Moderate Resolution Imaging Spectroradiometer (MODIS) instrument provides data iin 36 different bands ranging in wavelength from 0.4 $\mu m$ to 14.4 $\mu m$. The first MODIS instrument was integrated on the Terra spacecraft, which was launched in December 1999; and the second instrument was integrated on the Aqua spacecraft, launched on May 2002. They have a  sun-synchronous, near-polar, orbit; Terra passes at 10:30 a.m. (descending node) whereas Aqua passes at 1:30 p.m. (ascending node).  The swath dimensions are 2330 km (cross track) by 10 km (along track at nadir).
 
-Native brightness temperatures from two channels from the Collection 6 MODIS Level-1B radiance product aggregated to 1-km spatial resolution were used in this project. Channel 20 and channel 31 will be denoted as $T_4$ and $T_{11}$ respectively. The original methodology (\cite{giglio_et_al_2016}) uses data from channel 21, but here we have used channel 20 since it was already available in UiO's servers.
+Native brightness temperatures from two channels from the Collection 6 MODIS Level-1B radiance product aggregated to 1-km spatial resolution were used in this project. Channel 20 and channel 31 will be denoted as $T_4$ and $T_{11}$ respectively (see Table \ref{tab:modis_bands}). The original methodology (\cite{giglio_et_al_2016}) uses data from channel 21, but here we have used channel 20 since it was already available in UiO's servers.
 
 \begin{table}[htbp]
     \centering
@@ -211,6 +211,12 @@ Native brightness temperatures from two channels from the Collection 6 MODIS Lev
     \label{tab:modis_bands}
 \end{table}
 
+
+\subsection{Methods}
+
+The methodology for identifying potential wildfire pixels proposed by \citeauthor{2018_sweden_wildfires} (\citeyear{giglio_et_al_2016}) consists of comparing the temperatures of $T_4$ to a threshold set to $T4* = 310 K$ ($T4* = 305 K$ at night) and the difference $\Delta T = T_4 - T_{11}$ to the threshold $\Delta T* = 10 K$. Then, if $T_4 > T_4*$ and $\Delta T > \Delta T *$, and the $0.86 \mu m$ reflectance during the day is less than 0.35, the pixel is classified as potential fire. 
+
+For this work, we compared the values from band 20 to $T4* = ....$ and the difference between band 20 and 31 to $\Delta T* = ....$. The choice of the thresholds was made considering....
 
 % ------------------------------------------------------------------------------------------------------
 \chapter{Analysis}
