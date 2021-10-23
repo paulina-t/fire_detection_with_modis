@@ -40,6 +40,9 @@
 \usepackage{listings}  % Typesetting code
 \lstset{basicstyle = \ttfamily, frame = tb}
 
+\usepackage{subfig}
+%\usepackage[subfigure]{tocloft}
+
 
 %% Bibliography
 \usepackage{mathscinet}
@@ -211,7 +214,7 @@ Native brightness temperatures from two channels from the Collection 6 MODIS Lev
     \label{tab:modis_bands}
 \end{table}
 
-
+\textbf{Write about LST used to make figures}
 \subsection{Methods}
 
 The methodology for identifying potential wildfire pixels proposed by \citeauthor{2018_sweden_wildfires} (\citeyear{giglio_et_al_2016}) consists of comparing the temperatures of $T_4$ to a threshold set to $T4* = 310 K$ ($T4* = 305 K$ at night) and the difference $\Delta T = T_4 - T_{11}$ to the threshold $\Delta T* = 10 K$. Then, if $T_4 > T_4*$ and $\Delta T > \Delta T *$, and the $0.86 \mu m$ reflectance during the day is less than 0.35, the pixel is classified as potential fire. 
@@ -221,13 +224,32 @@ For this work, we compared the values from band 20 to $T4* = ....$ and the diffe
 % ------------------------------------------------------------------------------------------------------
 \chapter{Analysis}
 
+\subsection{Heatwave}
+
+\begin{figure}[!tbp]
+  \centering
+  \subfloat[2015-2017]{\includegraphics[width=0.5\textwidth]{heatwave/max_jul_2015_2017.png}\label{fig:max_july_2015_2018}}
+  \hfill
+  \subfloat[2018]{\includegraphics[width=0.5\textwidth]{heatwave/max_jul_2018.png}\label{fig:max_july_2018}}
+  \caption{Maximum LST during July.}
+\end{figure}
+
+\begin{figure}[!tbp]
+  \centering
+  \subfloat[2015-2017]{\includegraphics[width=0.5\textwidth]{heatwave/mean_max_jul_2015_2017.png}\label{fig:max_july_2015_2018}}
+  \hfill
+  \subfloat[2018]{\includegraphics[width=0.5\textwidth]{heatwave/mean_max_jul_2018.png}\label{fig:max_july_2018}}
+  \caption{Average maximum LST during July.}
+\end{figure}
+
+\subsection{Wildfires}
 % ------------------------------------------------------------------------------------------------------
 \chapter{Conclusions}
 
 
 Optional. Results, consequences, future work.
 
-\cref{tab:numbers} lists some integers satisfying \cref{eq:pythagoras} of \cref{thm:pythagoras}.
+
 
 
 
