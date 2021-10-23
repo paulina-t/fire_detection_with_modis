@@ -181,38 +181,35 @@ Blocking events associated with a weaker than normal jet stream led to severe he
     \label{fig:precipitation_percent}
 \end{figure}
 
-
-
-
-Many records were hit in the Northern Hemisphere.
-including regions in the Arctic. 
 https://www-sciencedirect-com.ezproxy.uio.no/science/article/pii/S0379711218303941
 
-Purpose of the paper, historical context, necessary background information and notation.
 
 % ------------------------------------------------------------------------------------------------------
 \chapter{Methods and Data}
 
+The method used to detect fires using MODIS data is described in \citeauthor{giglio_et_al_2016} (\citeyear{giglio_et_al_2016}), although the values of the threshold were modified taking into consideration the channels from MODIS used, that clouds are not filtered, and the total area affected by wildfires in Sweden as of July 23 (\cite{2018_sweden_wildfires}).
 
-Full proofs, numerical implementations.
-Remember to cite your sources,
-such as \cite{Hel17}.
+\subsection{Data}
 
-\begin{theorem}[Pythagoras]
-    \label{thm:pythagoras}
-    In a right triangle,
-    the square of the hypotenuse is equal to the sum of the squares of the other two sides.
-    That is,
-    \begin{equation}
-        \label{eq:pythagoras}
-            a^2 + b^2 = c^2,
-    \end{equation}
-    where \(c\) is the length of the hypotenuse and \(a\) and \(b\) are the lengths of the two other sides.
-\end{theorem}
+Native brightness temperatures from two channels from the Collection 6 MODIS Level-1B radiance product aggregated to 1-km spatial resolution were used in this project. Channel 20 and channel 31 will be denoted as $T_4$ and $T_{11}$ respectively. The original methodology (\cite{giglio_et_al_2016}) uses data from channel 21, but here we have used channel 20 since it was already available in UiO's servers.
 
-\begin{proof}
-    Draw a figure.
-\end{proof}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{@{}ccc@{}}
+        \toprule
+        \(\boldsymbol{}\) & \(\boldsymbol{Band}\) & \(\boldsymbol{Bandwidth}\)
+        \\
+        \midrule
+        $T_4$     & 20   & 3.660 - 3.840 
+        \\
+        $T_{11}$    & 31   & 10.780 - 11.280
+        \\
+        \bottomrule
+    \end{tabular}
+    \caption{Summary of MODIS channels used. The bandwidth is in $(\mu m)$}
+    \label{tab:modis_bands}
+\end{table}
+
 
 % ------------------------------------------------------------------------------------------------------
 \chapter{Analysis}
@@ -225,22 +222,7 @@ Optional. Results, consequences, future work.
 
 \cref{tab:numbers} lists some integers satisfying \cref{eq:pythagoras} of \cref{thm:pythagoras}.
 
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{@{}ccc@{}}
-        \toprule
-        \(\boldsymbol{a}\) & \(\boldsymbol{b}\) & \(\boldsymbol{c}\)
-        \\
-        \midrule
-        3 & 4 & 5
-        \\
-        65 & 72 & 97
-        \\
-        \bottomrule
-    \end{tabular}
-    \caption{Some interesting numbers}
-    \label{tab:numbers}
-\end{table}
+
 
 
 \printbibliography
