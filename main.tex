@@ -219,7 +219,7 @@ Native brightness temperatures from two channels from the Collection 6 MODIS Lev
 
 The methodology for identifying potential wildfire pixels proposed by \citeauthor{2018_sweden_wildfires} (\citeyear{giglio_et_al_2016}) consists of comparing the temperatures of $T_4$ to a threshold set to $T4* = 310 K$ ($T4* = 305 K$ at night) and the difference $\Delta T = T_4 - T_{11}$ to the threshold $\Delta T* = 10 K$. Then, if $T_4 > T_4*$ and $\Delta T > \Delta T *$, and the $0.86 \mu m$ reflectance during the day is less than 0.35, the pixel is classified as potential fire. 
 
-For this work, we compared the values from band 20 to $T4* = ....$ and the difference between band 20 and 31 to $\Delta T* = ....$. The choice of the thresholds was made considering....
+For this work, we compared the values from band 20 to $T4* = ....$ and the difference between band 20 and 31 to $\Delta T* = ....$. The choice of the thresholds was made considering the total area as of July 23. In order to compare with the Swedish data, a cloud mask was generated from MODIS LST data and a mask that only covers Sweden was generated from using the MATLAB function borders.
 
 % ------------------------------------------------------------------------------------------------------
 \chapter{Analysis}
@@ -236,13 +236,36 @@ For this work, we compared the values from band 20 to $T4* = ....$ and the diffe
 
 \begin{figure}[!tbp]
   \centering
-  \subfloat[2015-2017]{\includegraphics[width=0.5\textwidth]{heatwave/mean_max_jul_2015_2017.png}\label{fig:max_july_2015_2018}}
+  \subfloat[2015-2017]{\includegraphics[width=0.5\textwidth]{heatwave/mean_max_jul_2015_2017.png}\label{fig:mean_july_2015_2018}}
   \hfill
-  \subfloat[2018]{\includegraphics[width=0.5\textwidth]{heatwave/mean_max_jul_2018.png}\label{fig:max_july_2018}}
+  \subfloat[2018]{\includegraphics[width=0.5\textwidth]{heatwave/mean_max_jul_2018.png}\label{fig:mean_july_2018}}
   \caption{Average maximum LST during July.}
 \end{figure}
 
 \subsection{Wildfires}
+
+After removing pixels affected by clouds, the number of detected fires according to different thresholds is exhibited in Table \ref{tab:num_fires}. Notice that data from southern Sweden is missing and large areas are covered by clouds, so the extent is supposed to be less than the observed, which was $250 km²$.
+
+\begin{table}[]
+\centering
+\begin{tabular}{lllll}
+T4* & $\Delta T *$ & N   &  &  \\
+310 & 10                        & 307 &  &  \\
+315 & 10                        & 0   &  &  \\
+313 & 10                        & 10  &  & 
+\end{tabular}
+\caption{Number of potential fires.}
+\label{tab:num_fires}
+\end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{fires/23_07_t4_313.jpg}
+    \caption{Potential fires after removing cloud for $T4* = 313$.}
+    \label{fig:fires_313}
+\end{figure}
+
+
 % ------------------------------------------------------------------------------------------------------
 \chapter{Conclusions}
 
